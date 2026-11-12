@@ -5,6 +5,9 @@ StrongLifts A/B, progresión automática, calentamiento, discos por lado según 
 cronómetro de descanso con vibración, agarre alterno del peso muerto, accesorio del día y EMOM al final.
 Cada sesión se graba como actividad de Fuerza en Garmin Connect (FC, calorías, una vuelta por serie).
 
+> Este código todavía no se ha compilado ni probado en un reloj.
+> Si la primera compilación muestra errores, pégamelos y los corrijo.
+
 ## 1. Instalar las herramientas (una vez)
 
 1. Instala **Visual Studio Code**.

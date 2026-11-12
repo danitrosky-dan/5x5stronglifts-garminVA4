@@ -6,6 +6,8 @@ muñeca, sin teléfono. Compatible con **vívoactive 4** y **vívoactive 4S**.
 Cada sesión se graba como actividad de **Fuerza** en Garmin Connect, con frecuencia cardiaca,
 calorías y una vuelta por serie.
 
+> **Estado:** en desarrollo. El código todavía no se ha compilado ni probado en un reloj.
+
 ## Funciones
 
 - **Rutinas A/B alternas**
