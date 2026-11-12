@@ -1,25 +1,25 @@
 <properties>
     <property id="barKg" type="float">20.0</property>
     <property id="zbarKg" type="float">6.0</property>
-    <property id="plates" type="string">25x2,20x2,15x2,10x4,5x4,2.5x4,1.25x4</property>
+    <property id="plates" type="string">20x6,10x2,5x2,2.5x2,1.25x2</property>
     <property id="incOther" type="float">2.5</property>
     <property id="incDeadlift" type="float">5.0</property>
 
-    <property id="start_squat" type="float">20.0</property>
-    <property id="start_bench" type="float">20.0</property>
-    <property id="start_row" type="float">30.0</property>
-    <property id="start_ohp" type="float">20.0</property>
-    <property id="start_deadlift" type="float">40.0</property>
-    <property id="applyStart" type="boolean">false</property>
+    <property id="start_squat" type="float">80.0</property>
+    <property id="start_bench" type="float">40.0</property>
+    <property id="start_row" type="float">40.0</property>
+    <property id="start_ohp" type="float">40.0</property>
+    <property id="start_deadlift" type="float">85.0</property>
+    <property id="applyStart" type="boolean">true</property>
     <property id="nextWk" type="number">0</property>
 
     <property id="swMin" type="number">10</property>
-    <property id="swReps" type="number">10</property>
-    <property id="swKg" type="float">16.0</property>
-    <property id="curlKg" type="float">20.0</property>
+    <property id="swReps" type="number">15</property>
+    <property id="swKg" type="float">20.0</property>
+    <property id="curlKg" type="float">23.5</property>
     <property id="curlSets" type="number">3</property>
-    <property id="curlReps" type="number">10</property>
-    <property id="triKg" type="float">15.0</property>
+    <property id="curlReps" type="number">8</property>
+    <property id="triKg" type="float">21.0</property>
     <property id="triSets" type="number">3</property>
-    <property id="triReps" type="number">10</property>
+    <property id="triReps" type="number">8</property>
 </properties>
