@@ -1,0 +1,29 @@
+<strings>
+    <string id="AppName">Bitácora 5x5</string>
+
+    <string id="sBar">Barra olímpica (kg)</string>
+    <string id="sZbar">Barra Z (kg)</string>
+    <string id="sPlates">Discos (peso x cantidad total)</string>
+    <string id="sPlatesPrompt">Ej: 25x2,20x2,10x4,5x4,2.5x4,1.25x4</string>
+    <string id="sIncOther">Incremento sentadilla/press/remo (kg)</string>
+    <string id="sIncDl">Incremento peso muerto (kg)</string>
+    <string id="sStartSquat">Peso actual sentadilla (kg)</string>
+    <string id="sStartBench">Peso actual press banca (kg)</string>
+    <string id="sStartRow">Peso actual remo (kg)</string>
+    <string id="sStartOhp">Peso actual press militar (kg)</string>
+    <string id="sStartDl">Peso actual peso muerto (kg)</string>
+    <string id="sApply">Aplicar estos pesos al reloj (reemplaza la progresión guardada)</string>
+    <string id="sNext">Próximo entrenamiento</string>
+    <string id="sNextAuto">Automático</string>
+    <string id="sNextA">Forzar A</string>
+    <string id="sNextB">Forzar B</string>
+    <string id="sSwMin">EMOM swings: minutos</string>
+    <string id="sSwReps">EMOM swings: reps por minuto</string>
+    <string id="sSwKg">EMOM swings: kettlebell (kg)</string>
+    <string id="sCurlKg">Curl barra Z (días A): kg</string>
+    <string id="sCurlSets">Curl barra Z: series</string>
+    <string id="sCurlReps">Curl barra Z: reps</string>
+    <string id="sTriKg">Extensión tríceps barra Z (días B): kg</string>
+    <string id="sTriSets">Extensión tríceps: series</string>
+    <string id="sTriReps">Extensión tríceps: reps</string>
+</strings>

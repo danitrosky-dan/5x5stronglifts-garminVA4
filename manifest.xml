@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
+    <iq:application id="8cd66b0cec2e446b99a001e5873943b4" type="watch-app" name="@Strings.AppName" entry="Bitacora5x5App" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.0.0">
+        <iq:products>
+            <iq:product id="vivoactive4"/>
+            <iq:product id="vivoactive4s"/>
+        </iq:products>
+        <iq:permissions>
+            <iq:uses-permission id="Fit"/>
+        </iq:permissions>
+        <iq:languages>
+            <iq:language>spa</iq:language>
+        </iq:languages>
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>

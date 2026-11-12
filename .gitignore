@@ -1,0 +1,11 @@
+# Compilados del SDK
+bin/
+*.prg
+*.iq
+*.debug.xml
+# Llave de desarrollador: nunca al repositorio
+*.der
+*.pem
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+<settings>
+    <setting propertyKey="@Properties.start_squat" title="@Strings.sStartSquat"><settingConfig type="numeric" min="0" max="400"/></setting>
+    <setting propertyKey="@Properties.start_bench" title="@Strings.sStartBench"><settingConfig type="numeric" min="0" max="400"/></setting>
+    <setting propertyKey="@Properties.start_row" title="@Strings.sStartRow"><settingConfig type="numeric" min="0" max="400"/></setting>
+    <setting propertyKey="@Properties.start_ohp" title="@Strings.sStartOhp"><settingConfig type="numeric" min="0" max="400"/></setting>
+    <setting propertyKey="@Properties.start_deadlift" title="@Strings.sStartDl"><settingConfig type="numeric" min="0" max="400"/></setting>
+    <setting propertyKey="@Properties.applyStart" title="@Strings.sApply"><settingConfig type="boolean"/></setting>
+    <setting propertyKey="@Properties.nextWk" title="@Strings.sNext">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.sNextAuto</listEntry>
+            <listEntry value="1">@Strings.sNextA</listEntry>
+            <listEntry value="2">@Strings.sNextB</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.incOther" title="@Strings.sIncOther"><settingConfig type="numeric" min="0" max="20"/></setting>
+    <setting propertyKey="@Properties.incDeadlift" title="@Strings.sIncDl"><settingConfig type="numeric" min="0" max="20"/></setting>
+    <setting propertyKey="@Properties.barKg" title="@Strings.sBar"><settingConfig type="numeric" min="1" max="40"/></setting>
+    <setting propertyKey="@Properties.zbarKg" title="@Strings.sZbar"><settingConfig type="numeric" min="1" max="30"/></setting>
+    <setting propertyKey="@Properties.plates" title="@Strings.sPlates" prompt="@Strings.sPlatesPrompt"><settingConfig type="alphaNumeric"/></setting>
+
+    <setting propertyKey="@Properties.swMin" title="@Strings.sSwMin"><settingConfig type="numeric" min="1" max="60"/></setting>
+    <setting propertyKey="@Properties.swReps" title="@Strings.sSwReps"><settingConfig type="numeric" min="1" max="60"/></setting>
+    <setting propertyKey="@Properties.swKg" title="@Strings.sSwKg"><settingConfig type="numeric" min="1" max="100"/></setting>
+    <setting propertyKey="@Properties.curlKg" title="@Strings.sCurlKg"><settingConfig type="numeric" min="0" max="200"/></setting>
+    <setting propertyKey="@Properties.curlSets" title="@Strings.sCurlSets"><settingConfig type="numeric" min="1" max="10"/></setting>
+    <setting propertyKey="@Properties.curlReps" title="@Strings.sCurlReps"><settingConfig type="numeric" min="1" max="50"/></setting>
+    <setting propertyKey="@Properties.triKg" title="@Strings.sTriKg"><settingConfig type="numeric" min="0" max="200"/></setting>
+    <setting propertyKey="@Properties.triSets" title="@Strings.sTriSets"><settingConfig type="numeric" min="1" max="10"/></setting>
+    <setting propertyKey="@Properties.triReps" title="@Strings.sTriReps"><settingConfig type="numeric" min="1" max="50"/></setting>
+</settings>
