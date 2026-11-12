@@ -5,9 +5,6 @@ StrongLifts A/B, progresión automática, calentamiento, discos por lado según 
 cronómetro de descanso con vibración, agarre alterno del peso muerto, accesorio del día y EMOM al final.
 Cada sesión se graba como actividad de Fuerza en Garmin Connect (FC, calorías, una vuelta por serie).
 
-> Este código no se ha compilado todavía: lo escribí sin acceso al SDK de Garmin.
-> Si la primera compilación muestra errores, pégamelos y los corrijo.
-
 ## 1. Instalar las herramientas (una vez)
 
 1. Instala **Visual Studio Code**.
@@ -72,11 +69,13 @@ instala desde el teléfono y los ajustes se editan desde la app Garmin Connect.
 
 ## Trabajar con git en VS Code
 
-La carpeta ya es un repositorio git con el primer commit hecho.
+El repositorio es público en GitHub:
+[danitrosky-dan/5x5stronglifts-garminVA4](https://github.com/danitrosky-dan/5x5stronglifts-garminVA4).
 - Panel **Source Control** (`Ctrl/Cmd + Shift + G`): ves los archivos cambiados,
   escribes un mensaje y presionas **Commit**.
-- Para subirlo a GitHub: en ese mismo panel, **Publish Branch** (te pide iniciar sesión en GitHub).
-  Elige repositorio **privado** si no quieres que sea público.
+- Para subir los commits a GitHub: en ese mismo panel, **Sync Changes**
+  (o `git push` en la terminal).
+- Al ser público, cualquiera puede ver lo que subas: no incluyas datos personales.
 - `.gitignore` deja fuera la carpeta `bin/` (archivos compilados) y tu llave de desarrollador
   (`*.der`). Nunca subas la llave: con ella se firman tus apps.
 
