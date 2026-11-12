@@ -1,0 +1,12 @@
+<resources>
+    <fitContributions>
+        <fitField id="0" sortOrder="0" displayInChart="false" displayInActivityLaps="true"
+                  dataLabel="@Strings.fitEx" unitLabel="@Strings.fitNone" />
+        <fitField id="1" sortOrder="1" displayInChart="false" displayInActivityLaps="true"
+                  dataLabel="@Strings.fitSet" unitLabel="@Strings.fitNone" />
+        <fitField id="2" sortOrder="2" displayInChart="false" displayInActivityLaps="true" precision="0"
+                  dataLabel="@Strings.fitReps" unitLabel="@Strings.fitRepsUnit" />
+        <fitField id="3" sortOrder="3" displayInChart="false" displayInActivityLaps="true" precision="1"
+                  dataLabel="@Strings.fitKg" unitLabel="@Strings.fitKgUnit" />
+    </fitContributions>
+</resources>

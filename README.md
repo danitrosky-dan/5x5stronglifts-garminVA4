@@ -3,10 +3,11 @@
 App de reloj (Connect IQ, Monkey C) para llevar el programa **StrongLifts 5x5** directamente en la
 muñeca, sin teléfono. Compatible con **vívoactive 4** y **vívoactive 4S**.
 
-Cada sesión se graba como actividad de **Fuerza** en Garmin Connect, con frecuencia cardiaca,
-calorías y una vuelta por serie.
+Cada sesión se graba como actividad de **Fuerza** en Garmin Connect, con frecuencia cardiaca y
+calorías. Cada serie, calentamiento y descanso queda como una vuelta separada con columnas de
+ejercicio, serie, repeticiones y peso.
 
-> **Estado:** en desarrollo. El código todavía no se ha compilado ni probado en un reloj.
+> **Estado:** en desarrollo. Compila para vívoactive 4 (SDK 9.3.0), pero todavía no se ha probado en el simulador ni en un reloj.
 
 ## Funciones
 

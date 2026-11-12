@@ -1,6 +1,7 @@
 import Toybox.Activity;
 import Toybox.ActivityRecording;
 import Toybox.Attention;
+import Toybox.FitContributor;
 import Toybox.Lang;
 import Toybox.Time;
 
@@ -25,6 +26,11 @@ class Workout {
     var accDone = false;
 
     var session = null;
+    // Campos de vuelta (FIT): cada serie queda como una vuelta con ejercicio, serie, reps y peso
+    var fEx = null;
+    var fSet = null;
+    var fReps = null;
+    var fKg = null;
     var discarded = false;
     var saved = false;
 
@@ -99,34 +105,52 @@ class Workout {
     // START / toque
     function confirm() {
         if (rest != null) {
-            rest = null;
+            endRest();
             return;
         }
         var s = current();
         var t = s[:t];
-        if (t == :intro || t == :warm) {
+        if (t == :intro) {
+            lap(Logic.liftName(s[:k]), "Preparacion", 0, 0.0);
+            advance();
+        } else if (t == :warm) {
+            lap(Logic.liftName(s[:k]), "Calent. " + (s[:i] + 1).toString() + "/" + s[:of].toString(), 5, s[:w]);
             advance();
         } else if (t == :work) {
             var done = pendingReps;
             reps[s[:k]][s[:i]] = done;
-            lap();
+            lap(Logic.liftName(s[:k]), "Serie " + (s[:i] + 1).toString() + "/" + Logic.workSets(s[:k]).toString(), done, weights[s[:k]]);
             advance();  // advance() reinicia pendingReps para la serie siguiente
             rest = { :start => Time.now().value(), :fail => done < Logic.TARGET, :fired => 0 };
         } else if (t == :acc) {
             accDone = true;
+            var acc = accessory();
+            lap(acc[:name], acc[:sets].toString() + "x" + acc[:reps].toString(), acc[:reps], acc[:kg]);
             advance();
         } else if (t == :emom) {
             if (emomStart == null && !emomDone) {
+                lap("Descanso", "", 0, 0.0);
                 emomStart = Time.now().value();
                 emomLastMin = 0;
                 vibrate(1);
             } else {
-                swDone = true;
-                emomStart = null;
-                emomDone = true;
+                endEmom();
                 advance();
             }
         }
+    }
+
+    function endRest() {
+        lap("Descanso", "", 0, 0.0);
+        rest = null;
+    }
+
+    function endEmom() {
+        var mins = Logic.propN("swMin", 10);
+        lap("Swings kettlebell", "EMOM " + mins.toString() + " min", mins * Logic.propN("swReps", 10), Logic.propF("swKg", 16.0));
+        swDone = true;
+        emomStart = null;
+        emomDone = true;
     }
 
     // Deslizar arriba (+1) / abajo (-1)
@@ -176,7 +200,7 @@ class Workout {
     // BACK: vuelve un paso. Devuelve false si ya está en el primero.
     function back() {
         if (rest != null) {
-            rest = null;
+            endRest();
             idx = idx - 1;
             enterStep();
             return true;
@@ -226,9 +250,7 @@ class Workout {
             var el = Time.now().value() - emomStart;
             var m = el / 60;
             if (m >= total) {
-                emomStart = null;
-                emomDone = true;
-                swDone = true;
+                endEmom();
                 vibrate(3);
             } else if (m > emomLastMin) {
                 emomLastMin = m;
@@ -264,6 +286,7 @@ class Workout {
                     :sport => ActivityRecording.SPORT_TRAINING,
                     :subSport => ActivityRecording.SUB_SPORT_STRENGTH_TRAINING
                 });
+                createFields();
                 session.start();
             } catch (e) {
                 session = null;
@@ -271,8 +294,30 @@ class Workout {
         }
     }
 
-    function lap() {
+    function createFields() {
+        if (!(session has :createField)) { return; }
+        fEx = session.createField("ejercicio", 0, FitContributor.DATA_TYPE_STRING,
+                                  { :mesgType => FitContributor.MESG_TYPE_LAP, :count => 24 });
+        fSet = session.createField("serie", 1, FitContributor.DATA_TYPE_STRING,
+                                   { :mesgType => FitContributor.MESG_TYPE_LAP, :count => 16 });
+        fReps = session.createField("reps", 2, FitContributor.DATA_TYPE_UINT16,
+                                    { :mesgType => FitContributor.MESG_TYPE_LAP });
+        fKg = session.createField("peso", 3, FitContributor.DATA_TYPE_FLOAT,
+                                  { :mesgType => FitContributor.MESG_TYPE_LAP, :units => "kg" });
+    }
+
+    function setLapFields(ex, set, r, kg) {
+        if (fEx == null) { return; }
+        fEx.setData(ex);
+        fSet.setData(set);
+        fReps.setData(r);
+        fKg.setData(kg.toFloat());
+    }
+
+    // Cierra la vuelta en curso con los datos de lo que se acaba de hacer
+    function lap(ex, set, r, kg) {
         if (session != null && session.isRecording()) {
+            setLapFields(ex, set, r, kg);
             session.addLap();
         }
     }
@@ -303,7 +348,10 @@ class Workout {
 
     function finish() {
         if (session != null) {
-            if (session.isRecording()) { session.stop(); }
+            if (session.isRecording()) {
+                setLapFields("Fin", "", 0, 0.0);
+                session.stop();
+            }
             session.save();
             session = null;
         }

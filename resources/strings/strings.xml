@@ -26,4 +26,12 @@
     <string id="sTriKg">Extensión tríceps barra Z (días B): kg</string>
     <string id="sTriSets">Extensión tríceps: series</string>
     <string id="sTriReps">Extensión tríceps: reps</string>
+
+    <string id="fitEx">Ejercicio</string>
+    <string id="fitSet">Serie</string>
+    <string id="fitReps">Repeticiones</string>
+    <string id="fitRepsUnit">reps</string>
+    <string id="fitKg">Peso</string>
+    <string id="fitKgUnit">kg</string>
+    <string id="fitNone"></string>
 </strings>
