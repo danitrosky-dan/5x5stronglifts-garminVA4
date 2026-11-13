@@ -7,7 +7,7 @@ Cada sesión se graba como actividad de **Fuerza** en Garmin Connect, con frecue
 calorías. Cada serie, calentamiento y descanso queda como una vuelta separada con columnas de
 ejercicio, serie, repeticiones y peso.
 
-> **Estado:** en desarrollo. Compila para vívoactive 4 (SDK 9.3.0), pero todavía no se ha probado en el simulador ni en un reloj.
+> **Estado:** funcional. Probada en un vívoactive 4 real (compilada con el SDK 9.3.0).
 
 ## Funciones
 
